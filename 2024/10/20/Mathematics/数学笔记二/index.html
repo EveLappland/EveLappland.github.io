@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#3367D6"/>
+  <link rel="apple-touch-icon" href="/icons-192.png">
+  <link rel="manifest" href="/manifest.json">
+  
+  <meta name="generator" content="Hexo 7.3.0">
+
+  
+
+  
+
+  
+    <meta name="author" content="Suivez">
+  
+
+  
+
+  
+
+  <title>数学笔记二 | Suivez&#39;s Blog</title>
+
+  
+
+  
+    <link rel="shortcut icon" href="/avdet-48vfu-001.ico">
+  
+
+  
+  <!-- config.syntax_highlighter == highlight.js -->
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.13/index.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/monokai.min.css">
+  
+  <!-- config.syntax_highlighter == prismjs -->
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+  <div class="root-container">
+    
+<!-- header container -->
+<header class="header-container post">
+  
+    <div class="post-image" style="background-image: url(/assets/yanami1.jpg)"></div>
+  
+
+  <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          Suivez&#39;s Blog
+        
+      </a>
+    </div>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="navbar-list">
+        
+          <li class="navbar-list-item"><a href="/">首页</a></li>
+        
+          <li class="navbar-list-item"><a href="/archives">归档</a></li>
+        
+          <li class="navbar-list-item"><a href="/links">友链</a></li>
+        
+          <li class="navbar-list-item"><a href="/about">关于</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="header-content">
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">数学笔记二</h1>
+          <h2 class="title-sub-wrap">
+            <strong>Suivez</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2024-10-20T08:23:06.426Z" itemprop="datePublished">2024-10-20</time>
+          </h2>
+          
+          
+          <ul class="wrap-list dark">
+  
+    <li><a href="/categories/Mathematics/">📒 Mathematics</a></li>
+    
+</ul>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/tags/Notes/">🏷️ Notes</a></li>
+  
+</ul>
+        </div>
+      </div>
+    </div>
+  
+
+  
+  
+  
+</header>
+
+    <!-- 文章 -->
+
+<!-- 文章内容 -->
+<div class="body-container">
+  <article class="content-container layout-block post-container">
+    <div class="article-info">
+      
+      
+      
+      
+      <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
+        <h1 id="数学笔记·二"><a href="#数学笔记·二" class="headerlink" title="数学笔记·二"></a>数学笔记·二</h1><h3 id="第四节-函数的连续性（承第一章函数与极限）"><a href="#第四节-函数的连续性（承第一章函数与极限）" class="headerlink" title="第四节 函数的连续性（承第一章函数与极限）"></a>第四节 函数的连续性（承第一章函数与极限）</h3><ul>
+<li><p>连续性概念</p>
+<blockquote>
+<p>由极限的性质可知，一个函数在某点连续的充要条件是它在该点左右都连续。</p>
+</blockquote>
+</li>
+<li><p>间断点分类</p>
+<ul>
+<li><p><strong>第一类间断点</strong></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8F%AF%E5%8E%BB%E9%97%B4%E6%96%AD%E7%82%B9?fromModule=lemma_inlink"><strong>可去间断点</strong></a>：函数在该点左极限、右极限存在且相等，但不等于该点函数值或函数在该点无定义。如函数y&#x3D;（x^2-1)&#x2F;(x-1)在点x&#x3D;1处。</p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%B7%B3%E8%B7%83%E9%97%B4%E6%96%AD%E7%82%B9?fromModule=lemma_inlink"><strong>跳跃间断点</strong></a>：函数在该点左极限、右极限存在，但不相等。如函数y&#x3D;|x|&#x2F;x在点x&#x3D;0处。</p>
+</blockquote>
+</li>
+<li><p><strong>第二类间断点</strong></p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%97%A0%E7%A9%B7%E9%97%B4%E6%96%AD%E7%82%B9/3531630?fromModule=lemma_inlink"><strong>无穷间断点</strong></a>：函数在该点可以无定义，且左极限、右极限至少有一个不存在，且函数在该点极限为∞。如函数y&#x3D;tanx在点x&#x3D;π&#x2F;2处。</p>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%8C%AF%E8%8D%A1%E9%97%B4%E6%96%AD%E7%82%B9?fromModule=lemma_inlink"><strong>振荡间断点</strong></a>：函数在该点可以无定义，当自变量趋于该点时，函数值在两个常数间变动无限多次。如函数y&#x3D;sin(1&#x2F;x)在x&#x3D;0处。</p>
+</blockquote>
+</li>
+<li><p>由上述对各种间断点的描述可知，<strong>函数f(x)在第一类间断点的左右极限都存在，而函数f(x)在第二类间断点的左右极限至少有一个不存在</strong>，这也是第一类间断点和第二类间断点的本质上的区别。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="第五节"><a href="#第五节" class="headerlink" title="第五节"></a>第五节</h3><ul>
+<li><p>迫敛准则</p>
+<p>主要是放缩，抓住可合成量（如 N个1求和为n*(n+1)&#x2F;2），和高阶量不变原则</p>
+</li>
+<li><p><strong>单调有界准则</strong></p>
+<p>单调有界数列必有极限。用于证明收敛很有用。</p>
+<p>求极限时可以<strong>先假设存在</strong>。方便计算。<del>（避免求数列通项）</del></p>
+</li>
+<li><p><strong>两个重要极限</strong></p>
+<p><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main/image-20220921223539147.png" alt="image-20220921223539147"></p>
+<blockquote>
+<p>第二个很重要，第一个可以直接看成等价无穷小。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="第六节"><a href="#第六节" class="headerlink" title="第六节"></a>第六节</h3><ul>
+<li><p><strong>无穷小量</strong></p>
+<blockquote>
+<p>确切地说，当自变量x无限接近x<sub>0</sub>（或x的绝对值无限增大）时，函数值f(x)与0无限接近，即f(x)→0(或f(x)&#x3D;0)，则称f(x)为当x→x<sub>0</sub>(或x→∞)时的无穷小量。</p>
+</blockquote>
+</li>
+<li><p><strong>等阶无穷小量</strong></p>
+<p>即两个无穷小量坐商得常数时。</p>
+</li>
+<li><p><strong>等价无穷小量</strong></p>
+<p>即两个无穷小量坐商得1。等价无穷小量可互换。</p>
+</li>
+<li><p><strong>常见等价无穷小量</strong></p>
+<p><img src="https://pica.zhimg.com/v2-f20a929bed77e97c61a9f83de9b4b5a4_r.jpg?source=1940ef5c" alt="aa" title="等价无穷小"></p>
+</li>
+</ul>
+<hr>
+<p><em>关于我突然变水的原因</em>：</p>
+<p>实在是比较忙，各项内容也越来越复杂，所以就择取主要的知识点并舍去证明。</p>
+<p><em>以上。</em></p>
+<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><h3 id="导数"><a href="#导数" class="headerlink" title="导数"></a>导数</h3><ul>
+<li><p>导数定义</p>
+<blockquote>
+<p>函数可导一定连续，函数连续不一定可导。</p>
+</blockquote>
+</li>
+<li><p>求导法则</p>
+<p>注意除法，反函数，隐函数求导法则。</p>
+<blockquote>
+<p>掌握反代的思想，掌握对数求导法。</p>
+</blockquote>
+</li>
+<li><p>含参求导</p>
+<p>一阶导可直接求二阶导可能需要反代。</p>
+</li>
+</ul>
+<blockquote>
+<p>注意导数与微分的关系，如何二阶导隐函数。以及推导方法。</p>
+</blockquote>
+<ul>
+<li><p>断点处的导数求解，在有定义时使用求导法。</p>
+<p>在无定义时，使用定义法。(求极限)</p>
+</li>
+<li><p>高阶函数求导注意规律，和复合函数的导</p>
+</li>
+</ul>
+<h3 id="微分"><a href="#微分" class="headerlink" title="微分"></a>微分</h3><ul>
+<li><p>一元函数，可导则可微</p>
+</li>
+<li><p>微分常数A，与极限有关</p>
+</li>
+<li><p>微分运算类似求导法则</p>
+</li>
+<li><p>微分近似运算</p>
+<p>f(x)&#x3D;f(x0)+f’(x0)(x-x0)</p>
+<blockquote>
+<p>为了计算f(x)，可找一个邻近于x的x0，只要f(x)和f’(x)容易计算，就可以利用这个公式计算f(x)的近似值。</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main/%E5%BE%AE%E5%88%86%E8%BF%91%E4%BC%BC%E8%AE%A1%E7%AE%97.jpg" alt="微分"></p>
+<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><h3 id="微分中值定理"><a href="#微分中值定理" class="headerlink" title="微分中值定理"></a>微分中值定理</h3><ul>
+<li><p>费马引理</p>
+<p><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main/%E8%B4%B9%E9%A9%AC%E5%BC%95%E7%90%86.jpg" alt="费马引理"></p>
+</li>
+<li><p>罗尔中值定理</p>
+<p><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main/%E7%BD%97%E5%B0%94%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86.jpg" alt="罗尔中值定理"></p>
+</li>
+<li><p>拉格朗日中值定理</p>
+<p><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86.jpg" alt="拉格朗日中值定理"></p>
+</li>
+<li><p>柯西中值定理</p>
+<p><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main/%E6%9F%AF%E8%A5%BF%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86.jpg" alt="柯西中值定理"></p>
+</li>
+</ul>
+<p>洛必达法则</p>
+<p>泰勒公式</p>
+<p>麦克劳林公式</p>
+<ul>
+<li><p>佩亚诺余项</p>
+<p>高阶无穷小</p>
+</li>
+<li><p>拉格朗日余项</p>
+<p>中值–定量分析</p>
+</li>
+</ul>
+<p>函数的凹凸性</p>
+<h2 id="第四章"><a href="#第四章" class="headerlink" title="第四章"></a>第四章</h2><h4 id="不定积分"><a href="#不定积分" class="headerlink" title="不定积分"></a>不定积分</h4><h5 id="换元积分"><a href="#换元积分" class="headerlink" title="换元积分"></a>换元积分</h5><h5 id="分部积分"><a href="#分部积分" class="headerlink" title="分部积分"></a>分部积分</h5><blockquote>
+<p>凑微分，低次换元，三角换元，二次换元，重复型</p>
+</blockquote>
+<h5 id="积分表"><a href="#积分表" class="headerlink" title="积分表"></a>积分表</h5><p><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main/%E7%A7%AF%E5%88%86%E8%A1%A8.jpg" alt="积分表"></p>
+<h5 id="有理函数的不定积分"><a href="#有理函数的不定积分" class="headerlink" title="有理函数的不定积分"></a>有理函数的不定积分</h5><p>待定系数法</p>
+<ul>
+<li><p>万能公式</p>
+<p><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main/%E4%B8%87%E8%83%BD%E5%85%AC%E5%BC%8F.jpg" alt="万能公式"></p>
+</li>
+</ul>
+<h4 id="定积分"><a href="#定积分" class="headerlink" title="定积分"></a>定积分</h4><h5 id="定积分概念求无穷项和的极限"><a href="#定积分概念求无穷项和的极限" class="headerlink" title="定积分概念求无穷项和的极限"></a>定积分概念求无穷项和的极限</h5><p><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main/%E5%AE%9A%E7%A7%AF%E5%88%86%E6%A6%82%E5%BF%B5.jpg" alt="定积分概念"></p>
+<h5 id="估值定理"><a href="#估值定理" class="headerlink" title="估值定理"></a>估值定理</h5><p>区间内的Max与Min乘以区间长度得到限定区间。</p>
+<h5 id="积分中值定理"><a href="#积分中值定理" class="headerlink" title="积分中值定理"></a>积分中值定理</h5><p><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main/%E7%A7%AF%E5%88%86%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86.jpg" alt="积分中值定理"></p>
+<p>求积分函数极限时用到，由介值定理推得</p>
+<h5 id="几何意义"><a href="#几何意义" class="headerlink" title="几何意义"></a>几何意义</h5><h5 id="牛顿莱布尼茨公式"><a href="#牛顿莱布尼茨公式" class="headerlink" title="牛顿莱布尼茨公式"></a>牛顿莱布尼茨公式</h5><h5 id="微积分学基本定理"><a href="#微积分学基本定理" class="headerlink" title="微积分学基本定理"></a>微积分学基本定理</h5><p>连续函数必存在原函数</p>
+<h5 id="平面曲线的弧长与曲率"><a href="#平面曲线的弧长与曲率" class="headerlink" title="平面曲线的弧长与曲率"></a>平面曲线的弧长与曲率</h5><ul>
+<li><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main/1%E5%BC%A7%E9%95%BF%E5%85%AC%E5%BC%8F.png" alt="1弧长公式"></li>
+<li><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main/2%E5%BC%A7%E9%95%BF%E5%85%AC%E5%BC%8F.png" alt="2"></li>
+<li><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main/3%E5%BC%A7%E9%95%BF%E5%85%AC%E5%BC%8F.png" alt="3"></li>
+</ul>
+<h5 id="极坐标系"><a href="#极坐标系" class="headerlink" title="极坐标系"></a>极坐标系</h5><p><em><strong>x&#x3D;pcosa,y&#x3D;psina;</strong></em></p>
+<h5 id="平面曲线的曲率"><a href="#平面曲线的曲率" class="headerlink" title="平面曲线的曲率"></a>平面曲线的曲率</h5><h5 id="曲率圆"><a href="#曲率圆" class="headerlink" title="曲率圆"></a>曲率圆</h5><h5 id="定积分的几何应用"><a href="#定积分的几何应用" class="headerlink" title="定积分的几何应用"></a>定积分的几何应用</h5><h5 id="连续函数的平均值"><a href="#连续函数的平均值" class="headerlink" title="连续函数的平均值"></a>连续函数的平均值</h5><h5 id="定积分在物理学与经济学"><a href="#定积分在物理学与经济学" class="headerlink" title="定积分在物理学与经济学"></a>定积分在物理学与经济学</h5><ul>
+<li><p>变力做功</p>
+</li>
+<li><p>引力问题</p>
+</li>
+<li><p>液体侧面压力</p>
+</li>
+</ul>
+<h5 id="反常积分"><a href="#反常积分" class="headerlink" title="反常积分"></a>反常积分</h5>
+      </section>
+
+      
+      
+        <nav class="article-nav">
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2024/10/20/Mathematics/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%AC%94%E8%AE%B0%E4%B8%80/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">线性代数笔记一</h2>
+        </a>
+      
+      <div class="card-text--row">Newer</div>
+    </div>
+  </article>
+</div>
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2024/10/20/Mathematics/%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0%E4%B8%80/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">高等数学笔记一</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
+
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+
+  
+  
+
+
+      </section>
+    </div>
+    <div class="widget-info">
+      <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-body">
+    
+      <img src="https://s.gravatar.com/avatar/96dafc6fdd11543b0428bc470781d164?s=200&amp;r=g&amp;d=retro" class="soft-size--round soft-style--box" alt="Suivez">
+    
+    
+      <h2>Suivez</h2>
+    
+    
+      <p>Tech otakus save the world!</p>
+    
+
+    <div class="count-box">
+      <div class="count-box--item">
+        <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
+</svg>
+        <span>16</span>
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+        7
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+        5
+      </div>
+    </div>
+  </div>
+</section>
+
+      
+
+      
+<section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-notice" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M512 945.02305225v28.15620663a24.27259221 24.27259221 0 0 1-24.27259221 24.27259335H394.0352a48.54518557 48.54518557 0 0 1-41.74885888-23.78714112l-110.68302222-184.47170332a132.04290333 132.04290333 0 0 1-17.47626667-48.54518557h118.4502511a200.97706667 200.97706667 0 0 1 76.21594113 14.56355556l20.38897777 133.49925888a48.54518557 48.54518557 0 0 0 36.40888888 27.67075555l16.01991111 2.91271112a24.27259221 24.27259221 0 0 1 20.38897778 25.72894889zM997.45185223 463.45481443a194.18074112 194.18074112 0 0 1-38.8361489 116.50844445 24.75804445 24.75804445 0 0 1-36.4088889 0l-34.95253333-34.95253333a24.27259221 24.27259221 0 0 1-2.91271111-30.58346667 97.09036999 97.09036999 0 0 0 0-106.79940665 24.27259221 24.27259221 0 0 1 2.91271111-30.58346666l34.95253333-34.95253334a24.75804445 24.75804445 0 0 1 18.93262223-7.28177777 26.2144 26.2144 0 0 1 17.47626667 9.70903665A194.18074112 194.18074112 0 0 1 997.45185223 463.45481443z m-194.18074112-388.36148111v776.72296335a48.54518557 48.54518557 0 0 1-48.54518556 48.54518443h-28.64165888a48.54518557 48.54518557 0 0 1-33.98163001-14.07810332l-145.63555556-143.20829668A291.27111111 291.27111111 0 0 0 342.57730333 657.63555556H172.18370333a145.63555556 145.63555556 0 0 1-145.63555556-145.63555556v-97.09036999a145.63555556 145.63555556 0 0 1 145.63555556-145.63555556h170.3936a291.27111111 291.27111111 0 0 0 206.31703779-85.43952668l145.63555555-143.20829554a48.54518557 48.54518557 0 0 1 33.98162888-14.07810446H754.72592555a48.54518557 48.54518557 0 0 1 48.54518556 48.54518555z" fill="currentColor"></path>
+</svg>
+    <span>NOTICE</span>
+  </div>
+  <div class="widget-body">
+
+    <p id="notice">https://v1.hitokoto.cn/?c=b&amp;encode=text</p>
+  </div>
+</section>
+
+
+      <section class="widget-categories widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+      <span>CATEGORIES</span>
+  </div>
+  <div class="widget-body">
+    <ul class="categories-list">
+      
+        <li class="categories-list-item">
+          <a href="/categories/Mathematics/">
+            Mathematics (5)
+          </a>
+        </li>
+        
+        <li class="categories-list-item">
+          <a href="/categories/%E6%9C%AD%E8%AE%B0/">
+            札记 (2)
+          </a>
+        </li>
+        
+        <li class="categories-list-item">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/">
+            计算机科学 (6)
+          </a>
+        </li>
+        
+        <li class="categories-list-item">
+          <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">
+            网络安全 (2)
+          </a>
+        </li>
+        
+        <li class="categories-list-item">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0/">
+            程序设计笔记 (6)
+          </a>
+        </li>
+        
+        <li class="categories-list-item">
+          <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/CTF/">
+            CTF (2)
+          </a>
+        </li>
+        
+        <li class="categories-list-item">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0/DFS/">
+            DFS (3)
+          </a>
+        </li>
+        
+    </ul>
+  </div>
+</section>
+
+      <section class="widget-tags widget-item  layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+    <span>TAGS</span>
+  </div>
+  <div class="widget-body">
+    <div class="tags-cloud">
+      <a href="/tags/C/" style="font-size: 17.5px;" class="tags-cloud-8">C++</a> <a href="/tags/CTF/" style="font-size: 12.5px;" class="tags-cloud-3">CTF</a> <a href="/tags/DFS/" style="font-size: 15px;" class="tags-cloud-5">DFS</a> <a href="/tags/Notes/" style="font-size: 20px;" class="tags-cloud-10">Notes</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 10px;" class="tags-cloud-0">随笔</a>
+    </div>
+  </div>
+</section>
+    </div>
+  </article>
+</div>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    
+    <div class="social-icons">
+      
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://github.com/EveLappland/" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-github" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M64.6 512c0 195.6 125.4 361.9 300.1 422.9 23.5 5.9 19.9-10.8 19.9-22.2v-77.6c-135.8 15.9-141.3-74-150.5-89-18.5-31.5-61.9-39.5-49-54.5 31-15.9 62.5 4 98.9 58 26.4 39.1 77.9 32.5 104.1 26 5.7-23.5 17.9-44.5 34.7-60.9-140.7-25.2-199.4-111.1-199.4-213.3 0-49.5 16.4-95.1 48.4-131.8-20.4-60.6 1.9-112.4 4.9-120.1 58.2-5.2 118.5 41.6 123.3 45.3 33.1-8.9 70.8-13.7 112.9-13.7 42.4 0 80.3 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.4-43.9 2.9 7.7 24.7 58.3 5.5 118.1 32.5 36.8 49 82.8 49 132.4 0 102.3-59 188.3-200.2 213.2 23.5 23.3 38.1 55.5 38.1 91.1v112.7c0.8 9 0 17.9 15.1 17.9C832.7 877 960.4 709.4 960.4 512.1c0-247.5-200.6-447.9-447.9-447.9C265 64.1 64.6 264.5 64.6 512z"></path>
+</svg>
+          </a>
+        
+      
+        
+      
+    </div>
+     
+    <p>&copy; 2024 <a href="/" target="_blank">Suivez</a></p>
+
+    
+
+    <p>Powered by <a href="https://hexo.io" target="_blank" rel="noopener noreferrer">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank" rel="noopener noreferrer author">flex-block</a></p>
+
+    <p>
+      <a href="javascript:;" id="theme-light">🌞 浅色</a>
+      <a href="javascript:;" id="theme-dark">🌛 深色</a>
+      <a href="javascript:;" id="theme-auto">🤖️ 自动</a>
+    </p>
+  </div>
+</footer>
+  </div>
+
+  <div class="back-to-top-fixed soft-size--round soft-style--box">
+    <svg class="icon icon-back-to-top" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path d="M725.333333 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8l-213.333333-213.333333c-17.066667-17.066667-17.066667-42.666667 0-59.733333s42.666667-17.066667 59.733333 0l213.333333 213.333333c17.066667 17.066667 17.066667 42.666667 0 59.733333C746.666667 422.4 738.133333 426.666667 725.333333 426.666667z"></path>
+      <path d="M298.666667 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8-17.066667-17.066667-17.066667-42.666667 0-59.733333l213.333333-213.333333c17.066667-17.066667 42.666667-17.066667 59.733333 0s17.066667 42.666667 0 59.733333l-213.333333 213.333333C320 422.4 311.466667 426.666667 298.666667 426.666667z"></path>
+      <path d="M512 896c-25.6 0-42.666667-17.066667-42.666667-42.666667L469.333333 170.666667c0-25.6 17.066667-42.666667 42.666667-42.666667s42.666667 17.066667 42.666667 42.666667l0 682.666667C554.666667 878.933333 537.6 896 512 896z"></path>
+    </svg>
+  </div>
+
+  
+  
+
+
+
+
+
+
+<!-- copy button  -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+<!-- https://clipboardjs.com/ -->
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+  <!-- 尾部用户自定义相关内容 -->
+</body>
+</html>

